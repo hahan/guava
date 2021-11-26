@@ -477,7 +477,7 @@ public final class ByteStreams {
     // When called at high frequency, boxing size generates too much garbage,
     // so avoid doing that if we can.
     if (size < 0) {
-      throw new IllegalArgumentException(String.format("Invalid size: %s", size));
+      throw new IllegalArgumentException(String.format("Invalid size: %d", size));
     }
     return newDataOutput(new ByteArrayOutputStream(size));
   }
@@ -919,7 +919,7 @@ public final class ByteStreams {
     checkNotNull(in);
     checkNotNull(b);
     if (len < 0) {
-      throw new IndexOutOfBoundsException(String.format("len (%s) cannot be negative", len));
+      throw new IndexOutOfBoundsException(String.format("len (%d) cannot be negative", len));
     }
     checkPositionIndexes(off, off + len, b.length);
     int total = 0;
